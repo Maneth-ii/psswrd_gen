@@ -3,6 +3,7 @@ const numberOfCharactersInput = document.querySelector("#count");
 const uppercaseInput = document.querySelector("#uppercase");
 const numbersInput = document.querySelector("#numbers");
 const displayEl = document.querySelector("#display");
+const copyButton = document.querySelector("#copyButton");
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -16,6 +17,12 @@ form.addEventListener('submit', (e) => {
     showPassword(generetedPassword);
 });
 
+copyButton.addEventListener('click', () => {
+        const passwordToCopy = displayEl.textContent;
+        copyToClipboard(passwordToCopy);
+        alert('Password copied to clipboard!');
+    
+});
 
 function generator(length = 8, resource, includeUppercase, includeNumbers) {
     let password = '';
@@ -49,4 +56,15 @@ function showPassword(password) {
 }
 function shuffle(str) {
     return str.split('').sort(() => Math.random() - 0.5).join('');
+}
+
+
+
+function copyToClipboard(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
 }
