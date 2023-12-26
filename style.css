@@ -1,0 +1,14 @@
+label{
+    display: flex;
+}
+input{
+    display: flex;
+
+}
+
+.container{
+    display: flex;
+    gap: .5rem;
+    text-align: justify;
+    
+}
