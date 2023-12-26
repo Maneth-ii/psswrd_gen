@@ -18,7 +18,7 @@ form.addEventListener('submit', (e) => {
 });
 
 copyButton.addEventListener('click', () => {
-        const passwordToCopy = displayEl.textContent;
+        const passwordToCopy = displayEl.textContent
         copyToClipboard(passwordToCopy);
         alert('Password copied to clipboard!');
     
